@@ -4,6 +4,8 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'selector',
+  safelist: ['font-sans', 'font-serif', 'font-mono'],
   theme: {
     extend: {
       colors: {
