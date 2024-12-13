@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { PiCaretDownBold } from "react-icons/pi";
 
 type Option<T extends string | number> = {
   value: T;
@@ -49,18 +50,29 @@ function Select<T extends string | number>({
       <label htmlFor={id} className={labelClasses}>
         {label}
       </label>
-      <select id={id} value={selectedValue?.toString()} onChange={handleChange}>
-        {placeholder && (
-          <option value="" disabled>
-            {placeholder}
-          </option>
-        )}
-        {options.map((option) => (
-          <option key={option.value.toString()} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
+      <span className="relative">
+        <select
+          id={id}
+          value={selectedValue?.toString()}
+          onChange={handleChange}
+          className="appearance-none bg-transparent pr-4"
+        >
+          {placeholder && (
+            <option value="" disabled>
+              {placeholder}
+            </option>
+          )}
+          {options.map((option) => (
+            <option key={option.value.toString()} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+        <PiCaretDownBold
+          aria-hidden="true"
+          className="absolute right-0 top-1/2 -translate-y-1/2 text-[0.875rem] text-primary-purple"
+        />
+      </span>
     </div>
   );
 }

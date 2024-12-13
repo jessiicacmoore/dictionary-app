@@ -1,11 +1,11 @@
-import Select from "../../ui/Select";
-import ToggleSwitch from "../../ui/ToggleSwitch";
-import { useTheme } from "../hooks";
-import { Font } from "../types";
+import { HiOutlineMoon } from "react-icons/hi2";
+import { Font } from "@features/theme/types";
+import { useTheme } from "@features/theme";
+import { Select } from "@features/ui";
+import { ToggleSwitch } from "@features/ui";
 
 function ThemeControls() {
   const { theme, font, toggleTheme, setFont } = useTheme();
-  console.log("controls");
 
   const handleFontSelect = (value: Font) => {
     setFont(value);
@@ -14,7 +14,7 @@ function ThemeControls() {
   return (
     <fieldset>
       <legend className="sr-only">Theme preferences</legend>
-      <div className="flex gap-6 align-middle">
+      <div className="flex items-center gap-5">
         <Select
           id="font-select"
           label="Theme Font"
@@ -27,14 +27,17 @@ function ThemeControls() {
           defaultValue={font}
           onChange={handleFontSelect}
         />
-        <span className="inline-block h-8 w-px bg-gray-500"></span>
-        <ToggleSwitch
-          labelText="Dark Mode"
-          id="dark-mode"
-          isLabelVisible={false}
-          isChecked={theme === "dark"}
-          onChange={toggleTheme}
-        />
+        <span className="inline-block h-8 w-px bg-gray-300"></span>
+        <span className="flex items-center gap-2 leading-none">
+          <ToggleSwitch
+            labelText="Dark Mode"
+            id="dark-mode"
+            isLabelVisible={false}
+            isChecked={theme === "dark"}
+            onChange={toggleTheme}
+          />
+          <HiOutlineMoon className="text-3xl text-gray-500 dark:text-primary-purple" />
+        </span>
       </div>
     </fieldset>
   );

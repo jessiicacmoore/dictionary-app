@@ -1,13 +1,14 @@
+import { RiBookMarkedFill } from "react-icons/ri";
 import { ThemeControls } from "@features/theme";
-import Container from "./Container";
+import { Container } from "@features/layout";
 
 function Header() {
   return (
-    <header className="my-6 py-4">
-      <Container className="flex justify-between">
+    <header className="my-6 py-4 font-bold">
+      <Container className="flex items-center justify-between">
         <div>
           <h1 className="sr-only">Dictionary App</h1>
-          <span>Logo</span>
+          <RiBookMarkedFill className="text-5xl text-gray-500" />
         </div>
         <ThemeControls />
       </Container>
