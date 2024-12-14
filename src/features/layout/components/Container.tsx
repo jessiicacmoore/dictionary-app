@@ -3,7 +3,7 @@ import React from "react";
 
 type ContainerProps = {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 } & React.HtmlHTMLAttributes<HTMLDivElement>;
 
 function Container({ children, className, ...props }: ContainerProps) {

@@ -19,7 +19,7 @@ type SelectProps<T extends string | number> = {
 function Select<T extends string | number>({
   id,
   label,
-  isLabelVisible = true,
+  isLabelVisible,
   options,
   defaultValue,
   placeholder,
@@ -70,7 +70,7 @@ function Select<T extends string | number>({
         </select>
         <PiCaretDownBold
           aria-hidden="true"
-          className="absolute right-0 top-1/2 -translate-y-1/2 text-[0.875rem] text-primary-purple"
+          className="text-primary-purple-500 absolute right-0 top-1/2 -translate-y-1/2 text-[0.875rem]"
         />
       </span>
     </div>

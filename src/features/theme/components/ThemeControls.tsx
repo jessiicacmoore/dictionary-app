@@ -36,7 +36,7 @@ function ThemeControls() {
             isChecked={theme === "dark"}
             onChange={toggleTheme}
           />
-          <HiOutlineMoon className="text-3xl text-gray-500 dark:text-primary-purple" />
+          <HiOutlineMoon className="dark:text-primary-purple-500 text-3xl text-gray-500" />
         </span>
       </div>
     </fieldset>
