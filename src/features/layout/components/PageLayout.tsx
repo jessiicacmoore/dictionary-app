@@ -1,4 +1,4 @@
-import { Header } from "@features/layout";
+import { Header, Footer } from "@features/layout";
 import { SearchForm } from "@features/search";
 import { WordDetails } from "@features/word-details";
 
@@ -10,6 +10,7 @@ function PageLayout() {
         <SearchForm />
         <WordDetails />
       </main>
+      <Footer />
     </div>
   );
 }
