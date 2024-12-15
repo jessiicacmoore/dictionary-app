@@ -1,0 +1,1 @@
+export { fetchWordData } from "./fetchWordData";

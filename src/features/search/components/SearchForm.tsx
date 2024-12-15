@@ -1,13 +1,18 @@
 import React, { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { Container } from "@features/layout";
 import { TextInput } from "@features/ui";
 import { Button } from "@features/ui";
 
 function SearchForm() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [queryParams, setQueryParams] = useSearchParams();
+  const [searchTerm, setSearchTerm] = useState(queryParams.get("search") || "");
 
   const handleSubmit = (e: React.FormEvent) => {
+    if (searchTerm.trim()) {
+      setQueryParams({ search: searchTerm });
+    }
     e.preventDefault();
     return;
   };

@@ -1,14 +1,13 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppProvider from "@app/Provider";
-import { Header } from "@features/layout";
-import { SearchForm } from "@features/search";
+import { PageLayout } from "@features/layout";
+
+const router = createBrowserRouter([{ path: "/", element: <PageLayout /> }]);
 
 function App() {
   return (
     <AppProvider>
-      <Header />
-      <main role="main">
-        <SearchForm />
-      </main>
+      <RouterProvider router={router} />
     </AppProvider>
   );
 }
