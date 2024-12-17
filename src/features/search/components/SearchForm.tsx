@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
+import { getRandomBabyAnimal } from "@utils/getRandomBabyAnimal";
 import { Container } from "@features/layout";
 import { TextInput } from "@features/ui";
 import { Button } from "@features/ui";
@@ -28,7 +29,7 @@ function SearchForm() {
         <TextInput
           id="search-input"
           label="Search"
-          placeholder="Puppies..."
+          placeholder={getRandomBabyAnimal() + "..."}
           value={searchTerm}
           onChange={setSearchTerm}
           className="flex-grow"
