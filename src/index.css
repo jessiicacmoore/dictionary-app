@@ -5,7 +5,9 @@
 @tailwind utilities;
 
 @layer base {
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     @apply font-bold;
   }
 
@@ -14,17 +16,17 @@
   }
 
   h2 {
-    @apply text-4xl mb-2 mt-8;
+    @apply my-2 text-4xl;
   }
 
   h3 {
-    @apply text-2xl mt-8 mb-6 italic;
+    @apply mb-6 mt-8 text-2xl italic;
   }
 
   h4 {
-    @apply text-xl text-gray-300 mb-4 mt-6;
+    @apply mb-4 mt-6 text-xl text-gray-300;
   }
-  
+
   p {
     @apply mb-4;
   }
@@ -43,11 +45,10 @@
   .line-divider::after,
   .heading-with-line::after {
     content: "";
-    @apply flex-grow h-px bg-gray-300;
+    @apply h-px flex-grow bg-gray-300;
   }
 
   .heading-with-line::after {
     @apply ml-6;
   }
-
 }
