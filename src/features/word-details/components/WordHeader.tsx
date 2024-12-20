@@ -11,7 +11,7 @@ function WordHeader({ word, phonetics }: WordHeaderProps) {
   const phoneticToDisplay =
     phonetics.length > 0 ? firstWithAudio || phonetics[0] : null;
   return (
-    <div className="flex items-center justify-between pt-12">
+    <div className="flex items-center justify-between">
       <div>
         <h2>{word}</h2>
         {phoneticToDisplay && (

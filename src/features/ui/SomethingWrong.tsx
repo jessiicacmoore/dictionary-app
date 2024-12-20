@@ -1,10 +1,9 @@
-import { Container } from "@features/layout";
-
-function SomeThingWrong() {
+function SomeThingWrong({ message }: { message: string }) {
   return (
-    <Container>
-      <p>Oopsie! Looks like something went wrong here!</p>
-    </Container>
+    <div className="mx-auto max-w-[400px] text-center">
+      <h2 className="mb-4 text-4xl font-extrabold sm:text-7xl">Oh No!</h2>
+      <p className="text-bold text-xl text-gray-300">{message}</p>
+    </div>
   );
 }
 

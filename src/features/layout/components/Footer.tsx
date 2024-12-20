@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="mt-12 bg-gray-200 pb-2 pt-6 text-gray-500 dark:bg-gray-600 dark:text-gray-300">
       <Container>
-        <p>
+        <p className="text-center">
           Powered by{" "}
           <a
             href="https://dictionaryapi.dev/"
