@@ -1,6 +1,7 @@
 import { RiBookMarkedFill } from "react-icons/ri";
 import { ThemeControls } from "@features/theme";
 import { Container } from "@features/layout";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -8,7 +9,9 @@ function Header() {
       <Container className="flex items-center justify-between">
         <div>
           <h1 className="sr-only">Dictionary App</h1>
-          <RiBookMarkedFill className="text-5xl text-gray-500" />
+          <Link to={{ pathname: "/" }}>
+            <RiBookMarkedFill className="text-5xl text-gray-500" />
+          </Link>
         </div>
         <ThemeControls />
       </Container>
