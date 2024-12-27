@@ -2,6 +2,7 @@ import { useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { fetchWordData } from "@features/word-details/api";
 import { Word } from "@features/word-details/types";
+import { LiveAnnouncer } from "@features/accessibility";
 import { SomethingWrong, Spinner } from "@features/ui";
 import { MeaningList, NoQuery, WordHeader } from "@features/word-details";
 
@@ -15,19 +16,28 @@ function WordDetails() {
     enabled: !!query,
   });
 
-  if (!query) return <NoQuery />;
-
-  if (isLoading) return <Spinner />;
-
-  if (error) return <SomethingWrong message={error.message} />;
-
-  const wordInfo = data[0] as Word;
+  const wordInfo =
+    Array.isArray(data) && data.length > 0 ? (data[0] as Word) : null;
 
   return (
-    <>
-      <WordHeader word={wordInfo.word} phonetics={wordInfo.phonetics} />
-      <MeaningList meanings={wordInfo.meanings} />
-    </>
+    <section>
+      <h1 className="sr-only">Word Details</h1>
+      <LiveAnnouncer
+        isLoading={isLoading}
+        error={error ? { message: error.message } : undefined}
+        data={data}
+        title={wordInfo?.word}
+      />
+      {!query && <NoQuery />}
+      {isLoading && <Spinner />}
+      {error && <SomethingWrong message={error.message} />}
+      {data && wordInfo && (
+        <>
+          <WordHeader word={wordInfo.word} phonetics={wordInfo.phonetics} />
+          <MeaningList meanings={wordInfo.meanings} />
+        </>
+      )}
+    </section>
   );
 }
 

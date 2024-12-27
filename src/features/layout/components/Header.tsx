@@ -8,7 +8,6 @@ function Header() {
     <header className="my-6 py-4 font-bold">
       <Container className="flex items-center justify-between">
         <div>
-          <h1 className="sr-only">Dictionary App</h1>
           <Link to={{ pathname: "/" }}>
             <RiBookMarkedFill className="text-5xl text-gray-500" />
           </Link>
