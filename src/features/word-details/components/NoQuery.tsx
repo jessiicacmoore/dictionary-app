@@ -1,13 +1,8 @@
 function NoQuery() {
   return (
-    <div className="mx-auto text-center">
-      <h2 className="mb-4 text-4xl font-extrabold sm:text-7xl">
-        Lost for words?
-      </h2>
-      <p className="text-xl text-gray-300">
-        Type one in and explore the dictionary magic!
-      </p>
-    </div>
+    <p className="py-16 text-center text-gray-300">
+      Lost for words? Type one in and explore the dictionary magic!
+    </p>
   );
 }
 
