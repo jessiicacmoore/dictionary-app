@@ -37,6 +37,7 @@ function TextInput({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         aria-describedby={error ? `${id}-error` : undefined}
+        autoComplete="off"
         className="block w-full rounded-2xl border border-gray-300 bg-transparent px-4 py-6 placeholder:text-gray-300"
       />
       {error && <span id={`${error}-id`}>{error}</span>}
