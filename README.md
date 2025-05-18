@@ -33,7 +33,7 @@ An accessible busy spinner and live region is used in this implementation. Durin
 ### Links
 
 - Solution URL: [Github Repository](https://github.com/jessiicacmoore/dictionary-app)
-- Live Site URL: [Github Pages](https://jessthedev-fem-dictionary-app.netlify.app)
+- Live Site URL: [jessthedev-fem-dictionary-app.netlify.app](https://jessthedev-fem-dictionary-app.netlify.app)
 
 ## My process
 ### Built with
